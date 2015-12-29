@@ -4,12 +4,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>d3 music</title>
-    <link rel="stylesheet" href="application.css" />
+    <link rel="stylesheet" href="style/app.css" />
 </head>
 
 <body>
-<audio id="audioElement" src="audio/dance_Sugar_Plum_Fairy.mp3"></audio>
-<video id="videoElement" src="video/sugar_plum_fairy.mp4" autoplay></video>
+<div id="videoContainer">
+    <video id="videoElement" src="video/sugar_plum_fairy.mp4"></video>
+    <div id="graphContainer"></div>
+
+</div>
 <div>
     <button onclick="document.getElementById('videoElement').play()">Play the Video</button>
     <button onclick="document.getElementById('videoElement').pause()">Pause the Video</button>
@@ -17,12 +20,6 @@
     <button onclick="document.getElementById('videoElement').volume-=0.1">Decrease Volume</button>
 </div>
 
-<div>
-    <button onclick="document.getElementById('audioElement').play()">Play the Audio</button>
-    <button onclick="document.getElementById('audioElement').pause()">Pause the Audio</button>
-    <button onclick="document.getElementById('audioElement').volume+=0.1">Increase Volume</button>
-    <button onclick="document.getElementById('audioElement').volume-=0.1">Decrease Volume</button>
-</div>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="lib/d3.js"></script>
 <script src="js/main.js" charset="utf-8"></script>

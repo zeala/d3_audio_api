@@ -15,15 +15,15 @@ $(document).ready(function () {
     //var frequencyData = new Uint8Array(analyser.frequencyBinCount);
     var frequencyData = new Uint8Array(200);
 
-    var svgHeight = '300';
-    var svgWidth = '1200';
+    var svgHeight = 360;// $('#videoElement').height;
+    var svgWidth = 640;
     var barPadding = '1';
 
     function createSvg(parent, height, width) {
         return d3.select(parent).append('svg').attr('height', height).attr('width', width);
     }
 
-    var svg = createSvg('body', svgHeight, svgWidth);
+    var svg = createSvg('#graphContainer', svgHeight, svgWidth);
 
     // Create our initial D3 chart.
     svg.selectAll('rect')
@@ -37,6 +37,7 @@ $(document).ready(function () {
 
     // Continuously loop and update chart with frequency data.
     function renderChart() {
+
         requestAnimationFrame(renderChart);
 
         // Copy frequency data to frequencyData array.
